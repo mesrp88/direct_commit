@@ -1,6 +1,8 @@
 import requests
 import smtplib
 from bs4 import BeautifulSoup
+import time
+
 
 
 def check_mail():
@@ -16,6 +18,7 @@ def check_mail():
         send_mail()
     print(title.strip())
     print(converted_price)
+
 
 def send_mail():
     server= smtplib.SMTP("smtp.gmail.com", 587)
@@ -35,8 +38,11 @@ def send_mail():
     )
     print('EMIAL HAS BEEN SEND')
     server.quit()
+while True:
+    check_mail()
+    time.sleep(60*60*24)
 
-check_mail()
+
 
 
 
