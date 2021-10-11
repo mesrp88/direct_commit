@@ -12,12 +12,13 @@ def draw_block():
 if __name__=="__main__":
     pygame.init()   #iniitalizing pygame
     window= pygame.display.set_mode((500, 500))  #creating surface
+    pygame.display.set_caption("Snake Game")
     window.fill((110,115,100))  #surface color
     
 
     block_img= pygame.image.load("block.jpg").convert()  #loading block
     block_X=100;block_Y=100    #coordinate of block in surface at begining
-    window.blit(block_img, (block_X, block_Y))  #adding block in surface at beginin g
+    window.blit(block_img, (block_X, block_Y))  #adding block in surface at begining
     pygame.display.update()   # initial showing surface and block
 
     running= True
